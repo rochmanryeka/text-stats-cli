@@ -3,10 +3,30 @@
 Alat command-line sederhana untuk menghitung kata, karakter, dan baris teks.
 Dibangun dengan Python standard library, tanpa dependensi tambahan.
 
-## Rencana fitur
+## Persyaratan
 
-- Menghitung statistik teks dari argumen command-line.
-- Mendukung input melalui standard input (pipe).
-- Pengujian otomatis dengan `unittest`.
+Python 3.10 atau lebih baru. Tidak perlu `pip install`.
 
-Implementasi ditambahkan melalui pull request terpisah agar setiap perubahan mudah ditelusuri.
+## Penggunaan
+
+```bash
+python text_stats.py "Halo dunia"
+```
+
+Hasil:
+
+```json
+{"words": 2, "characters": 10, "lines": 1}
+```
+
+- Kata dipisahkan oleh whitespace.
+- Karakter dihitung sebagai Unicode code point, termasuk whitespace.
+- Baris dihitung menggunakan `str.splitlines()`; teks kosong memiliki nol baris.
+
+## Pengujian
+
+```bash
+python -m unittest discover -s tests -v
+```
+
+Tes juga berjalan melalui GitHub Actions untuk setiap pull request dan push ke `main`.
