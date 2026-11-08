@@ -13,6 +13,15 @@ Python 3.10 atau lebih baru. Tidak perlu `pip install`.
 python text_stats.py "Halo dunia"
 ```
 
+Input juga bisa dibaca dari pipe:
+
+```bash
+printf 'Halo dunia' | python text_stats.py
+```
+
+Jika dijalankan tanpa argumen dan tanpa pipe, program membaca standard input sampai EOF.
+Argumen teks eksplisit, termasuk string kosong, selalu didahulukan daripada standard input.
+
 Hasil:
 
 ```json
